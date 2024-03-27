@@ -88,4 +88,8 @@ if __name__ == "__main__":
 
     result = mapper(recList, boundBox)
 
+    if len(sys.argv == 1):
+        print(str(degAcc) + "\n")
+        for point in boundBox:
+            print(point)
     print(result)

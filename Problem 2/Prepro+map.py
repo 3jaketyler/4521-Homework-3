@@ -5,7 +5,7 @@ import sys
 import random
 
 def preProcess():
-    if len(sys.argv == 1):
+    if len(sys.argv) == 1:
         numRecs = int(input("\nEnter the number of rectangular prisms: "))
         degAcc = float(input("\nEnter your desired degree of accuracy: "))
 
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     result = mapper(recList, boundBox)
 
-    if len(sys.argv == 1):
+    if len(sys.argv) == 1:
         print(str(degAcc) + "\n")
         for point in boundBox:
             print(point)

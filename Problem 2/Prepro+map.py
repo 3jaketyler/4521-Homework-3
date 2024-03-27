@@ -6,6 +6,10 @@ import random
 
 def preProcess():
     if len(sys.argv) == 1:
+        origOut = sys.stdout
+        origErr = sys.stderr
+        sys.stdout = sys.__stdout__
+        sys.stderr = sys.__stderr__
         numRecs = int(input("\nEnter the number of rectangular prisms: "))
         degAcc = float(input("\nEnter your desired degree of accuracy: "))
 
@@ -49,6 +53,9 @@ def preProcess():
             w.write(" ".join(map(str, boundBox)) + "\n")
             for rec in recList:
                 w.write(" ".join(map(str, rec)) + "\n")
+
+        sys.stdout = origOut
+        sys.stderr = origErr
     else:
         recList = []
         boundBox = []

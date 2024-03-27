@@ -2,7 +2,7 @@
 
 #!/bin/bash
 
-python3 Prepro_map.py > tmp.txt
+python3 Prepro+map.py > tmp.txt
 
 for ((i=1; i<=200; i++)); do
     python3 Prepro+map.py >> tmp.txt

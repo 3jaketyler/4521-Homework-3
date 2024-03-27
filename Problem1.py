@@ -66,6 +66,7 @@ if __name__ == "__main__":
 
     pool = mp.Pool(processes = 150)
     results = []
+    i = 0
     for i in range(150):
         result = pool.apply_async(generatePoints, args=(boundBox, recList,))
         results.append(result)
@@ -74,4 +75,6 @@ if __name__ == "__main__":
     boundVol = (boundBox[3] - boundBox[0]) * (boundBox[4] - boundBox[1]) * (boundBox[5] - boundBox[2])
     ratio = allIn / allGen
     volume = ratio * boundVol
-    print("The volume is: " + volume)
+    volAcc = round(volume / degAcc) * degAcc
+    volFor = "{:.3f}".format(volAcc)
+    print("The volume is: " + str(volFor))

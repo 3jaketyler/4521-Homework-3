@@ -6,17 +6,17 @@ if __name__ == "__main__":
     mapperOut = []
     boundBox = []
 
-    degAcc = input().strip()
+    degAcc = float(input().strip())
     for i in range(6):
-        boundBox.append(input().strip())
+        boundBox.append(float(input().strip()))
 
-    while True:
+    for i in range(200):
         result = input().strip()
         if result == "":
             break
-        mapperOut.append(result)
+        mapperOut.append(float(result))
 
-    allIn = sum(mapperOut.get() for result in mapperOut)
+    allIn = sum(mapperOut)
     allGen = 200 * 10000
     boundVol = (boundBox[3] - boundBox[0]) * (boundBox[4] - boundBox[1]) * (boundBox[5] - boundBox[2])
     ratio = allIn / allGen

@@ -46,3 +46,5 @@ if __name__ == "__main__":
         w.write(" ".join(map(str, boundBox)) + "\n")
         for rec in recList:
             w.write(" ".join(map(str, rec)) + "\n")
+
+    

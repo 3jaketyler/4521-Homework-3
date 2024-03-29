@@ -2,20 +2,8 @@
 
 import sys
 import random
+import os
 
-def preProcess():
-    recList = []
-    boundBox = []
-    numRecs, degAcc = 0
-
-    with open("data.txt", "r") as r:
-        numRecs = int(r.readline().strip())
-        degAcc = float(r.readline().strip())
-        boundBox.append(list(map(float, r.readline().strip().split())))
-        for i in range(numRecs):
-            recList.append(list(map(float, r.readline().strip().split())))
-
-    return numRecs, degAcc, recList, boundBox
 
 def mapper(recList, boundBox):
     numInPancake = 0
@@ -38,12 +26,17 @@ def mapper(recList, boundBox):
 if __name__ == "__main__":
     recList = []
     boundBox = []
-    numRecs, degAcc, recList, boundBox = preProcess()
+    with open("data.txt", "r") as r:
+        numRecs = int(r.readline().strip())
+        degAcc = float(r.readline().strip())
+        boundBox = list(map(float, r.readline().strip().split()))
+        for i in range(numRecs):
+            recList.append(list(map(float, r.readline().strip().split())))
 
     result = mapper(recList, boundBox)
 
-    if len(sys.argv) == 1:
-        print(str(degAcc) + "\n")
+    if os.path.exists("tmp.txt") and os.path.getsize("tmp.txt") == 0:
+        print(str(degAcc))
         for point in boundBox:
             print(point)
     print(result)

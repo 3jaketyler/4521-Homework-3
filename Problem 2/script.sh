@@ -2,7 +2,13 @@
 
 #!/bin/bash
 
+python3 input.py
+
+wait
+
 python3 Prepro+map.py > tmp.txt
+
+wait
 
 for ((i=1; i<=200; i++)); do
     python3 Prepro+map.py >> tmp.txt

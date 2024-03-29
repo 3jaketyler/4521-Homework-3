@@ -4,16 +4,16 @@ import sys
 import random
 
 def preProcess():
-        recList = []
-        boundBox = []
-        numRecs, degAcc = 0
+    recList = []
+    boundBox = []
+    numRecs, degAcc = 0
 
-        with open("data.txt", "r") as r:
-            numRecs = int(r.readline().strip())
-            degAcc = float(r.readline().strip())
-            boundBox.append(list(map(float, r.readline().strip().split())))
-            for i in range(numRecs):
-                recList.append(list(map(float, r.readline().strip().split())))
+    with open("data.txt", "r") as r:
+        numRecs = int(r.readline().strip())
+        degAcc = float(r.readline().strip())
+        boundBox.append(list(map(float, r.readline().strip().split())))
+        for i in range(numRecs):
+            recList.append(list(map(float, r.readline().strip().split())))
 
     return numRecs, degAcc, recList, boundBox
 

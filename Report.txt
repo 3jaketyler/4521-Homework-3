@@ -1,1 +1,15 @@
 # The program in this file is the individual work of Jake Tyler
+
+Although this problem is a lot easier to solve with a Monte Carlo algorithm, it is not necessarily the most accurate, 
+which is the reason why a degree of accuracy is required. If I were not using a Monte Carlo algorithm, I would first
+calculate the volume of each individual rectangular prism. This would be easy to do with the given information, one would 
+simply calculate the length, width, and height to multiply them together. This would provide an exact volume for each 
+prism. From there, I would select a rectangular prism and go through the rest of the prisms and determine if there is any 
+overlap between them, and the volume that is overlapping. I would go through every prism and check every other prism against
+it in this fashion, and I would be able to calculate the total volume by subtractiung the overlapping volume for each prism. 
+This would require a lot more complicated algorithms and would be difficult to logically implement. The Monte Carlo approach 
+helps to avoid these pitfalls by providing a simple and elegant solution that is "close enough" for the vast majority of 
+applications. Because the distribution of randomness becomes normal with a large enough sample, it is highly likely that with
+the number of random points generated in this exercise that the distribution throughout the volume of the bounding box is 
+normal and even, but it will also be dense due to the large sameple size. This means that the volume generated in this 
+exercise will be very close, and is a lot simpler to implement and understand than a precise solution.  

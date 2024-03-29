@@ -1,3 +1,0 @@
-Enter your input:
-
-Enter the number of rectangular prisms: 

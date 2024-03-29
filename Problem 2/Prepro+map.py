@@ -6,10 +6,7 @@ import random
 
 def preProcess():
     if len(sys.argv) == 1:
-        origOut = sys.stdout
-        origErr = sys.stderr
-        sys.stdout = sys.__stdout__
-        sys.stderr = sys.__stderr__
+        print("Enter your input:", file=sys.stdout)
         numRecs = int(input("\nEnter the number of rectangular prisms: "))
         degAcc = float(input("\nEnter your desired degree of accuracy: "))
 
